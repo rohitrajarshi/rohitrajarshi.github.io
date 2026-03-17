@@ -44,3 +44,24 @@ a.button {
 a.button:hover {
   background-color: #084c94;
 }
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode header {
+  background-color: #222;
+}
+
+.dark-mode a.button {
+  background-color: #444;
+}
+
+.dark-mode a.button:hover {
+  background-color: #666;
+}
