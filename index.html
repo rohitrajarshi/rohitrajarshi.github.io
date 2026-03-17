@@ -57,7 +57,13 @@
       <h2>Resume</h2>
       <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
     </section>
+<section>
+  <h2>Fun Interaction 🎮</h2>
+  <p>Try clicking the button as fast as you can!</p>
 
+  <button class="button" onclick="increaseScore()">Click Me 🚀</button>
+  <p>Your Score: <span id="score">0</span></p>
+</section>
     <section id="contact">
       <h2>LinkedIn</h2>
       <a class="button" href="https://www.linkedin.com/" target="_blank">My LinkedIn</a>
@@ -76,6 +82,14 @@
       }
     }
   </script>
+<script>
+let score = 0;
 
+function increaseScore() {
+  score++;
+  document.getElementById("score").innerText = score;
+}
+</script>
 </body>
 </html>
+
