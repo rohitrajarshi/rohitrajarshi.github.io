@@ -1,36 +1,130 @@
-body {
-  font-family: Arial, sans-serif;
+/* ===== RESET ===== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f8fb;
   color: #222;
+  transition: all 0.3s ease;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
-  padding: 30px;
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f0f10;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+.logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-right a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.nav-right a:hover {
+  color: #4da3ff;
+}
+
+/* ===== TOGGLE BUTTON (ICON ONLY) ===== */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: #4da3ff;
+}
+
+/* ===== HEADER ===== */
 header {
   text-align: center;
-  padding: 40px 20px;
-  background-color: #0a66c2;
+  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
   color: white;
 }
 
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+/* ===== SECTIONS ===== */
 section {
   background: white;
   margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
 }
 
-h1, h2 {
-  margin-top: 0;
+section:hover {
+  transform: translateY(-3px);
 }
 
+h2 {
+  margin-bottom: 15px;
+}
+
+/* ===== PROJECTS ===== */
+.project {
+  margin-bottom: 25px;
+}
+
+.project h3 {
+  margin-bottom: 5px;
+}
+
+.project p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* ===== BUTTON ===== */
 a.button {
   display: inline-block;
   padding: 10px 18px;
@@ -38,24 +132,41 @@ a.button {
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  margin-top: 10px;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
 a.button:hover {
   background-color: #084c94;
+  transform: scale(1.05);
 }
-/* Dark Mode */
+
+/* ===== DARK MODE ===== */
 .dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
 
-.dark-mode section {
-  background-color: #1e1e1e;
+.dark-mode .navbar {
+  background: #111;
 }
 
 .dark-mode header {
-  background-color: #222;
+  background: linear-gradient(135deg, #111, #1c1c1c);
+}
+
+.dark-mode section {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.dark-mode .project p {
+  color: #bbb;
+}
+
+.dark-mode .nav-right a,
+.dark-mode .theme-toggle {
+  color: #fff;
 }
 
 .dark-mode a.button {
@@ -64,39 +175,4 @@ a.button:hover {
 
 .dark-mode a.button:hover {
   background-color: #666;
-}
-/* Fancy Theme Toggle Button */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  font-size: 22px;
-
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-/* Dark mode button style */
-.dark-mode .theme-toggle {
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
 }
