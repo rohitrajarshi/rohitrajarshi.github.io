@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rohit Rajarshi Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <nav class="navbar">
+    <div class="logo">Rohit</div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">CV</a>
+      <button class="theme-toggle" onclick="toggleMode()" id="themeBtn">🌙</button>
+    </div>
+  </nav>
 
   <header>
     <h1>Rohit Rajarshi</h1>
@@ -13,53 +25,56 @@
 
   <div class="container">
 
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <p>I am a graduate student at UMass Amherst focused on data analytics, business intelligence, and problem solving.</p>
     </section>
 
-<section>
-  <h2>Projects</h2>
+    <section id="projects">
+      <h2>Projects</h2>
 
-  <h3>MPG Prediction Model</h3>
-  <p>Built a linear regression model to predict vehicle fuel efficiency using Python. Improved accuracy using data cleaning and feature selection.</p>
-  <a class="button" href="https://github.com/yourusername/mpg-project" target="_blank">View Project</a>
+      <div class="project">
+        <h3>MPG Prediction Model</h3>
+        <p>Built a linear regression model to predict vehicle fuel efficiency using Python. Improved accuracy using data cleaning and feature selection.</p>
+        <a class="button" href="https://github.com/rohitrajarshi/mpg-project" target="_blank">View Project</a>
+      </div>
 
-  <h3>Car Price Analysis</h3>
-  <p>Analyzed factors affecting car prices using regression and visualization techniques like Pandas and Matplotlib.</p>
-  <a class="button" href="https://github.com/yourusername/car-price-analysis" target="_blank">View Project</a>
+      <div class="project">
+        <h3>Car Price Analysis</h3>
+        <p>Analyzed factors affecting car prices using regression and visualization techniques like Pandas and Matplotlib.</p>
+        <a class="button" href="https://github.com/rohitrajarshi/car-price-analysis" target="_blank">View Project</a>
+      </div>
 
-  <h3>SQL Case Study</h3>
-  <p>Designed relational database schemas and executed SQL queries for efficient data management.</p>
-  <a class="button" href="https://github.com/yourusername/sql-case-study" target="_blank">View Project</a>
+      <div class="project">
+        <h3>SQL Case Study</h3>
+        <p>Designed relational database schemas and executed SQL queries for efficient data management.</p>
+        <a class="button" href="https://github.com/rohitrajarshi/sql-case-study" target="_blank">View Project</a>
+      </div>
+    </section>
 
-</section>
     <section>
       <h2>Resume</h2>
       <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>LinkedIn</h2>
       <a class="button" href="https://www.linkedin.com/" target="_blank">My LinkedIn</a>
     </section>
 
   </div>
-<script>
-function toggleMode() {
-  document.body.classList.toggle("dark-mode");
 
-  const btn = document.getElementById("themeBtn");
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.getElementById("themeBtn");
+      if (document.body.classList.contains("dark-mode")) {
+        btn.innerHTML = "☀️";
+      } else {
+        btn.innerHTML = "🌙";
+      }
+    }
+  </script>
 
-  if (document.body.classList.contains("dark-mode")) {
-    btn.innerHTML = "☀️";
-  } else {
-    btn.innerHTML = "🌙";
-  }
-}
-</script>
 </body>
-<button class="theme-toggle" onclick="toggleMode()" id="themeBtn">
-  🌙
-</button>
 </html>
